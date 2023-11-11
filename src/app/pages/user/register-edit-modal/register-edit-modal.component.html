@@ -1,0 +1,40 @@
+<h2>{{ isEditMode ? 'Modificar usuario' : 'Registrar usuario' }}</h2>
+
+
+<form [formGroup]="registerEditForm" (ngSubmit)="onSubmit()" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+    <mat-form-field>
+        <mat-label>Usuario</mat-label>
+        <input matInput formControlName="username" placeholder="Usuario" [disabled]="isEditMode">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name" placeholder="Name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Correo</mat-label>
+      <input matInput formControlName="email" placeholder="Email">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input matInput formControlName="password" placeholder="Contraseña">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Dirección</mat-label>
+        <input matInput formControlName="direccion" placeholder="Dirección">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="roles" multiple placeholder="Roles">
+          <mat-option *ngFor="let role of allRoles" [value]="role.idRol">{{role.rolNombre}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+  
+      <button mat-raised-button color="primary" type="submit">
+        {{ isEditMode ? 'Modificar usuario' : 'Registrar' }}
+      </button>
+      
+  </form>
+  
+

@@ -1,0 +1,41 @@
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
+}
+
+.text-white {
+    text-align: center;
+}
+
+.btn-violet {
+    background-color: violet;
+    /* Cambia violet al color que desees */
+    color: white;
+    /* Cambia white al color de texto que prefieras */
+    /* Otros estilos, como bordes y sombras, si es necesario */
+}
+
+.btn-purple {
+    background-color: purple;
+    /* Cambia "purple" por el tono de púrpura que desees */
+    color: white;
+    /* Cambia "white" al color de texto que prefieras */
+    /* Otros estilos, como bordes y sombras, si es necesario */
+}
+
+.custom-input-size {
+    height: 40px; 
+}

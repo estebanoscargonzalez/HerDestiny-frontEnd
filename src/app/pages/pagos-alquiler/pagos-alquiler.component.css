@@ -1,0 +1,117 @@
+.pagos-tarjetas {
+    background: linear-gradient(to bottom, #37a5ee, #000); /* Degradado de azul (#37a5ee) a negro (#000) */
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+  }
+  
+  .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+  }
+  
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+  }
+  
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+  
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
+  
+  .container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
+  
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+  
+  .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+  
+  span.price {
+    float: right;
+    color: grey;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+  @media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
+  }
+
+  .circle-icon {
+    background-color: #62d645c7; /* Color del círculo (azul en este ejemplo) */
+    border-radius: 50%; /* Hace que el elemento sea un círculo */
+    width: 40px; /* Ancho fijo para el círculo */
+    height: 40px; /* Alto fijo para el círculo */
+    margin-right: 15px; /* Margen a la derecha del círculo */
+    display: inline-flex; /* Hace que el círculo se comporte como un elemento en línea */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    border: 2px solid #fff; /* Agrega un borde blanco de 4px alrededor del círculo */
+  }
+  
+  .btn-pago {
+    background-color: #0050a5 !important;
+    font-size: 20px;
+    font-weight: bold; /* Hace que el texto del botón esté en negrita */
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinea verticalmente el contenido en el centro */
+    align-items: center; /* Centra horizontalmente el contenido */
+    height: 100%; /* Establece una altura para asegurar que ocupe todo el espacio vertical de la tarjeta */
+  }  

@@ -1,0 +1,48 @@
+.image-container {
+    position: relative;
+    z-index: 1;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.text-wrapper {
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 5px; 
+}
+
+.titulo{
+    color: blanchedalmond;
+}
+
+.parrafo{
+    font-size: 20px;
+}
+
+.nosotros{
+    font-weight: 600 !important;
+    color: rgb(105, 112, 112) !important;
+
+}
+
+
+.banner {
+    position: relative;
+    max-height: 500px;  
+    overflow: hidden;   
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+
+
+
+

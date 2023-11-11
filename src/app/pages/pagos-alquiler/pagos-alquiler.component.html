@@ -1,0 +1,153 @@
+<div class="container-fluid pagos-tarjetas">
+
+  <div class="container ">
+
+    <div class="pagos">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="card-content"> <!-- Agrega la clase "card-content" aquí -->
+            <img src="assets/images/pagos/Visa1.jpeg" class="card-img-top imagen-pagos" alt="Imagen 1">
+
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="card-content"> <!-- Agrega la clase "card-content" aquí -->
+            <img src="assets/images/pagos/MasterCard1.jpeg" class="card-img-top imagen-pagos" alt="Imagen 2">
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="card-content"> <!-- Agrega la clase "card-content" aquí -->
+            <img src="assets/images/pagos/AmericanExpress2.jpeg" class="card-img-top imagen-pagos" alt="Imagen 2">
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="card-content"> <!-- Agrega la clase "card-content" aquí -->
+            <img src="assets/images/pagos/Paypal1.jpeg" class="card-img-top imagen-pagos" alt="Imagen 2">
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="card-content"> <!-- Agrega la clase "card-content" aquí -->
+            <img src="assets/images/pagos/LemonCash2.jpeg" class="card-img-top imagen-pagos" alt="Imagen 2">
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="card-content"> <!-- Agrega la clase "card-content" aquí -->
+            <img src="assets/images/pagos/mercadopago.png" class="card-img-top imagen-pagos" alt="Imagen 2">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form [formGroup]="miFormulario" (ngSubmit)="registrarAlquiler()">
+          <div class="row">
+            <div class="col-50">
+              <h3>Métodos de pago</h3>
+              <label for="fname">Tarjetas de pago</label>
+              <div class="icon-container">
+                <i class="fab fa-cc-visa" style="color: navy; margin-right: 10px; font-size: 30px;"></i>
+                <i class="fab fa-cc-amex" style="color: blue; margin-right: 10px; font-size: 30px;"></i>
+                <i class="fab fa-cc-mastercard" style="color: red; margin-right: 10px; font-size: 30px;"></i>
+                <i class="fab fa-cc-discover" style="color: orange; margin-right: 10px; font-size: 30px;"></i>
+                <span
+                  style="display: inline-block; border: 1px solid #14142b; padding: 3px 3px; background-color: #141425;">
+                  <i class="fas fa-lemon" style="color: rgb(3, 163, 30); font-size: 27px;"></i>
+                </span>
+              </div>
+
+              <!-- Titular de la tarjeta -->
+              <label for="titularTarjeta">Titular de la tarjeta</label>
+              <input type="text" id="titularTarjeta" formControlName="titularTj" placeholder="Nombre y apellidos"
+                required>
+              <!-- Muestra un mensaje de error si el campo titularTj es inválido -->
+              <div
+                *ngIf="miFormulario.get('titularTj')?.hasError('required') && miFormulario?.get('titularTj')?.touched">
+                <span class="text-danger">El titular de la tarjeta es obligatorio.</span>
+              </div>
+
+
+              <!-- Número de la tarjeta -->
+              <label for="numeroTarjeta">Número de la tarjeta</label>
+              <input type="text" id="numeroTarjeta" formControlName="numTarjeta" placeholder="1111-2222-3333-4444"
+                required maxlength="19" (input)="formatearNumeroTarjeta($event)">
+              <div
+                *ngIf="miFormulario.get('numTarjeta')?.hasError('required') && miFormulario.get('numTarjeta')?.touched">
+                <span class="text-danger"> El número de tarjeta es obligatorio.</span>
+              </div>
+              <div *ngIf="miFormulario.get('numTarjeta')?.hasError('numeroTarjetaInvalido')">
+                <span class="text-danger">El número de tarjeta debe contener 16 dígitos numéricos.</span>
+              </div>
+
+              <!-- Mes de vencimiento -->
+              <label for="mesVencimiento">Mes de vencimiento</label>
+              <input type="text" id="mesVencimiento" formControlName="fcVencimiento" placeholder="MM/YY" required
+                maxlength="5" (input)="formatearFechaVencimiento($event)">
+
+              <div *ngIf="miFormulario.get('fcVencimiento')?.hasError('fcVencimiento')">
+                <span class="text-danger">La fecha de vencimiento es obligatorio.</span>
+              </div>
+
+
+              <div class="row">
+
+                <div class="col-50">
+                  <!-- CVV -->
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" formControlName="cvv" placeholder="123" required maxlength="3"
+                    pattern="[0-9]{3}">
+                  <!-- Agregar el atributo pattern="[0-9]{3}" -->
+                  <div *ngIf="miFormulario.get('cvv')?.hasError('required') && miFormulario?.get('cvv')?.touched">
+                    <span class="text-danger"> El número CVV es obligatorio.</span>
+                  </div>
+                  <div *ngIf="miFormulario.get('cvv')?.hasError('pattern')">
+                    <span class="text-danger">El número CVV debe contener solo 3 dígitos numéricos.</span>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botón de pago -->
+          <button type="submit" class="btn btn-primary btn-pago" [disabled]="miFormulario.invalid">
+            Pagar ahora
+            <span class="circle-icon">
+              <i class="fas fa-lock" style="font-size: 20px;"></i>
+            </span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-25">
+      <div class="container">
+        <!-- Información del carrito -->
+        <h4>Carrito
+          <span class="price" style="color:black">
+            <i class="fa fa-shopping-cart"></i>
+            <b>1</b>
+          </span>
+        </h4>
+        <ng-container *ngIf="producto">
+          <h4>{{producto.nombre }}</h4>
+          <p>{{ producto.descripcion }}</p>
+          <hr>
+          <p>Total <span class="price" style="color:black"><b>$ {{producto.precio | number: '1.3-3'}} </b></span></p>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

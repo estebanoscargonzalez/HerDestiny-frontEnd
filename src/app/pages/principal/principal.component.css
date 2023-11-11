@@ -1,0 +1,32 @@
+.navbar {
+    color: #fff;
+    background-color: rgb(35, 164, 250);
+}
+
+.navbar-nav .nav-link {
+    font-size: 22px;
+    color: #fff;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 100px;
+}
+
+.salida {
+    font-size: 30px;
+}
+
+.btn-logout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn-logout .fas {
+    margin-right: 8px;
+}
+
+.main-content {
+    margin-bottom: 150px; /* Ajusta este valor según la altura de tu footer. */
+}

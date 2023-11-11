@@ -1,0 +1,7 @@
+.filters mat-form-field {
+    margin-right: 8px; /* Ajusta la separación entre los campos de entrada */
+  }
+  
+  .actions button {
+    margin-right: 8px; /* Ajusta la separación entre los botones */
+  }

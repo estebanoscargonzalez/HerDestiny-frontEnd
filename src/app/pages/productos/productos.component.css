@@ -1,0 +1,77 @@
+
+.btncolor{
+    background-color: #b923ff;
+    border-radius: 55555px;
+    padding: 1rem 2rem!important;
+    color: #ffff;
+    margin-bottom: 2rem;
+    
+  }
+  
+
+  .productos {
+    background: linear-gradient(90deg, rgb(80, 66, 163) 0%, rgb(161, 228, 161) 100%);
+  }
+  
+  
+  .package{
+    list-style-type: none;
+  }
+  
+  .pricing{
+   padding-left: 1.5rem;
+  }
+  
+  .parent{
+    height: 300px;
+    display: flex;
+    border:2px solid rgb(44, 233, 201);
+  }
+  
+  .child{
+    background-color: red;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+  }
+  
+  .icon-color
+  {
+    color:#1f38fa;
+  
+  }
+
+  .card{
+    background-color: rgb(212, 143, 64);
+  }
+
+  .btn-reserva{
+    background-color: #4536ca !important;
+    border: none;
+  }
+
+  .btn-reserva:hover{
+    background-color: #27be3c !important;
+    border: none;
+    transition: .4s;
+  }
+
+  .carousel-item img {
+    height: 100%; /* Ajusta la altura según tus preferencias */
+    object-fit: cover; /* Mantiene la proporción de aspecto y recorta la imagen */
+
+  }
+
+/* Estilo de imagen en blanco y negro por defecto */
+.carousel-item img {
+  filter: grayscale(0%);
+  
+}
+
+/* Cambio de color al pasar el mouse */
+.carousel-item img:hover {
+  filter: grayscale(100%); /* Convertir la imagen en blanco y negro */
+  transition: filter 0.5s ease; /* Transición suave del filtro */ 
+}
+

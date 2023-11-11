@@ -1,0 +1,25 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+.last_footer {
+    background-color: #0074E4 !important;
+    width: 100%;
+    max-height: 50px; /* Ajusta la altura máxima según tus preferencias */
+}
+.btn-purple {
+    background-color: purple; /* Cambia "purple" por el tono de púrpura que desees */
+    color: white; /* Cambia "white" al color de texto que prefieras */
+    /* Otros estilos, como bordes y sombras, si es necesario */
+  }  

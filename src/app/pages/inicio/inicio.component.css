@@ -1,0 +1,94 @@
+.banner {
+    position: relative;
+    max-height: 510px;  
+    overflow: hidden;   
+}
+
+.rounded-circle {
+    width: 150px;  /* puedes cambiar esto según el tamaño que desees */
+    height: 150px; /* asegúrate de que sea igual al ancho para mantener la proporción 1:1 */
+    object-fit: cover;
+}
+
+.seccion1{
+    background-color: lightpink !important;
+}
+
+
+.background-image {
+    background: url('/assets/images/inicio/titanium.png') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 500px;  /* Puedes ajustar esta altura según tus necesidades */
+}
+
+
+.text-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con 80% de opacidad */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+.seccion2{
+    background-color: lightblue;
+}
+
+.seccion3 {
+    background-color: lightpink !important;
+}
+
+
+.titulo{
+    color: blanchedalmond;
+}
+
+
+.background-image2 {
+    background: url('/assets/images/inicio/FEMME.png') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 500px;  /* Puedes ajustar esta altura según tus necesidades */
+}
+
+.col-12.col-md-4.offset-md-6 {
+    margin-left: 800px; /* Ajusta el valor según tus necesidades */
+}
+
+.col-12.col-md-4.offset-md-1 {
+    margin-left: 20px; /* Ajusta el valor según tus necesidades */
+}
+
+/* Para cambiar el color de texto a bordó en "Depilación Definitiva" */
+.seccion2 h2.titulo {
+    color: #800000; /* Cambiar a color bordó */
+}
+
+/* Para cambiar el color de texto a bordó en "Criolipólisis" */
+.background-image2 h2.titulo {
+    color: #800000; /* Cambiar a color bordó */
+}
+
+.btn-rosa-oscuro {
+    background-color: #FF1493; /* Cambia el valor a un tono de rosa más oscuro, como #FF1493 */
+    color: rgba(255, 218, 185, 1); /* Cambia el color del texto a "color piel" */
+}
+
+/* Para los títulos (h2) en "Depilación Definitiva" */
+.seccion2 .titulo {
+    font-size: 24px; /* Aumenta o disminuye el tamaño según tus preferencias */
+}
+
+/* Para los párrafos (p) en "Depilación Definitiva" */
+.seccion2 p {
+    font-size: 18px; /* Aumenta o disminuye el tamaño según tus preferencias */
+}
+
+/* Para los títulos (h2) en "Criolipólisis" */
+.background-image2 .titulo {
+    font-size: 24px; /* Aumenta o disminuye el tamaño según tus preferencias */
+}
+
+/* Para los párrafos (p) en "Criolipólisis" */
+.background-image2 p {
+    font-size: 18px; /* Aumenta o disminuye el tamaño según tus preferencias */
+}
