@@ -5,6 +5,7 @@ import { roles } from 'src/app/_model/rol';
 import { LoginService } from 'src/app/_service/login.service';
 import { ProductoService } from 'src/app/_service/producto.service';
 import { UserService } from 'src/app/_service/user.service';
+import Swal from 'sweetalert2';
 
 @Component({ 
   selector: 'app-productos',
@@ -64,10 +65,24 @@ export class ProductosComponent implements OnInit {
   }
   
   handleClick(idProducto: number) {
-    if (!this.esTransportista && this.isLoggedIn) {
-        this.router.navigate([`/principal/pagos/${idProducto}`]);
-    } 
-}
+    if (!this.isLoggedIn) {
+      // Pregunta si desea iniciar sesión
+      Swal.fire({
+        title: 'Para reservar el aquiler primero debe iniciar sesión. ¿Deseas iniciar sesión?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.router.navigate(['/login']); 
+        }
+      });
+    } else if (!this.esTransportista) {
+      this.router.navigate([`/principal/pagos/${idProducto}`]);
+    }
+  }
+  
 
 
   resetRoles(): void {

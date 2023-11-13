@@ -37,7 +37,7 @@ export class RegistroUserComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       isTransportista: [false],
       // Suponiendo que inicialmente todos los usuarios se registran con el mismo rol
-     roles: [[{ idRol: '' }]] // Este es un valor temporal, deberías cambiarlo según tu lógica.
+     roles: [ null ] // Este es un valor temporal, deberías cambiarlo según tu lógica.
     });
   }
 
@@ -54,7 +54,10 @@ registrarUsuario() {
 
   const datosUsuarioForm= this.registerForm.value;
       // Usa el valor del checkbox para determinar el idRol
-  const idRolSelected = datosUsuarioForm.isTransportista ? 3 : 2;
+      // rol registrado = 1
+      // rol transportista =  2;
+      // rol administrador =3
+  const idRolSelected = datosUsuarioForm.isTransportista ? 2 : 1;
   const user: RequestUser ={
 
     name: datosUsuarioForm.name,

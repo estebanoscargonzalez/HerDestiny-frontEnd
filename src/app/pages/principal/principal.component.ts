@@ -48,7 +48,7 @@ export class PrincipalComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.loginService.logout();
-        // Puedes mostrar otro mensaje con SweetAlert2 indicando que la sesión se cerró con éxito, si lo deseas
+        this.resetRoles();
         Swal.fire(
           '¡Cerrado!',
           'Tu sesión ha sido cerrada.',

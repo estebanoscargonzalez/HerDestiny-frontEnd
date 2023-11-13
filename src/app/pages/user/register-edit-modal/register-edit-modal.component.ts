@@ -29,13 +29,14 @@ export class RegisterEditModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('Modo de edición:', this.isEditMode); 
     this.cargarRoles();
     this.initForm();
     if (this.isEditMode && this.data.user) {
       this.passwordModified = false;
       const userWithRoleIds = {
         ...this.data.user,
-        roles: this.data.user.roles.map((role: roles) => role.idRol),
+        roles: this.data.user.roles[0].idRol,
       };
       this.registerEditForm.patchValue(userWithRoleIds);
     }
@@ -47,9 +48,6 @@ export class RegisterEditModalComponent implements OnInit {
     }
 
     const formData = this.registerEditForm.value;
-    const rolesArray = formData.roles.map((id: number) => {
-      return { idRol: id };
-    });
 
     // 
     const user: RequestUser = {
@@ -58,7 +56,7 @@ export class RegisterEditModalComponent implements OnInit {
       direccion: formData.direccion,
       username: formData.username,
       email: formData.email,
-      roles: rolesArray
+      roles: [{ idRol: formData.roles }] 
     };
 
     
@@ -119,16 +117,17 @@ export class RegisterEditModalComponent implements OnInit {
   }
 
   private initForm() {
+
     let passwordValidators = this.isEditMode ? [] : [Validators.required];
 
     this.registerEditForm = this.fb.group({
       id: [null],
-      username: ['', Validators.required],
+      username: [{value: '', disabled: this.isEditMode}, Validators.required],
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       direccion: ['', Validators.required],
       password: ['', passwordValidators],
-      roles: [[], Validators.required],
+      roles: [null, Validators.required],
     });
 
 
