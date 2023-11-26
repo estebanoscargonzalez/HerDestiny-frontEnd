@@ -47,14 +47,14 @@ export class RegisterEditModalComponent implements OnInit {
       return;
     }
 
-    const formData = this.registerEditForm.value;
+   const formData = this.registerEditForm.getRawValue(); // Usa getRawValue para incluir valores deshabilitados
 
     // 
     const user: RequestUser = {
       id: formData.id,
       name: formData.name,
       direccion: formData.direccion,
-      username: formData.username,
+      username: this.isEditMode ? this.data.user.username : formData.username,
       email: formData.email,
       roles: [{ idRol: formData.roles }] 
     };
